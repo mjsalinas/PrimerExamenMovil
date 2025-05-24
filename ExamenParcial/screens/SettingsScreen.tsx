@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import { View, Text, Switch } from "react-native";
+import { View, Text, Switch ,Button} from "react-native";
+import CustomButton from "../components/CustomButton";
 
 const SettingsScreen = () => {
-  const [darkMode] = useState(false); 
+  const [darkMode, setDarkmode] = useState(false); 
   const [showAdvanced, setShowAdvanced] = useState(false);
 
   return (
     <View style={{ padding: 20 }}>
       <Text>Modo Oscuro</Text>
-      <Switch value={darkMode} onValueChange={() => {}} />
+      <Switch value={darkMode} onValueChange={() => {setDarkmode(!darkMode)}} />
+<Button title="Mostrar Avanzado" onPress={() => {setShowAdvanced(!showAdvanced)}} />
+        
 
-      <Text onPress={() => setShowAdvanced(!showAdvanced)}>Mostrar Avanzado</Text>
+{showAdvanced ? <Text>Configuraciones Avanzadas</Text> : null}
 
-      {showAdvanced ? <Text>Configuraciones Avanzadas</Text> : null}
     </View>
   );
 };
