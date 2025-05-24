@@ -5,7 +5,7 @@ import ProfileScreen from "../ProfileScreen";
 import HomeScreen from "../screens/HomeScreen";
 // ⚠️ Error: SettingsScreen no importado
 const Stack = createNativeStackNavigator();
-
+//examen jesus torres
 export const RootNavigator = () => {
   return (
     <NavigationContainer>
