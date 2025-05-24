@@ -1,31 +1,48 @@
-import React, { useState } from "react";
-import { View, TextInput, Button, Text } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
 
-const ProfileScreen = () => {
-  const [nombre, setNombre] = useState();
-  const [edad, setEdad] = useState("");
-  const [bio] = useState(""); 
-  const [saved, setSaved] = useState(false);
+export default function ProfileScreen() {
+  const [nombre, setNombre] = useState('');
+  const [edad, setEdad] = useState('');
+  const [biografia, setBiografia] = useState('');
 
-  const guardarPerfil = () => {
-    if (nombre && edad) {
-      setSaved(true);
+  const handleGuardar = () => {
+    if (nombre && edad && biografia) {
+      Alert.alert('Perfil guardado correctamente');
+    } else {
+      Alert.alert('Por favor, complete todos los campos');
     }
   };
 
   return (
-    <View style={{ padding: 20 }}>
-      <TextInput placeholder="Nombre" />
-      <TextInput placeholder="Edad" />
-      <TextInput placeholder="Biografía" />
+    <View style={styles.container}>
+      <Text style={styles.label}>Nombre:</Text>
+      <TextInput style={styles.input} value={nombre} onChangeText={setNombre} />
 
-      <Button title="Guardar" onPress={() => {}} />
-      {saved ? <Text>Guardado!</Text> : ""}
-      {saved && <View> 
-        <Text>Tu nombre es: {nombre}, tienes {edad} años</Text>
-        </View>}
+      <Text style={styles.label}>Edad:</Text>
+      <TextInput style={styles.input} value={edad} onChangeText={setEdad} keyboardType="numeric" />
+
+      <Text style={styles.label}>Biografía:</Text>
+      <TextInput
+        style={[styles.input, { height: 80 }]}
+        value={biografia}
+        onChangeText={setBiografia}
+        multiline
+      />
+
+      <Button title="Guardar" onPress={handleGuardar} />
     </View>
   );
-};
+}
 
-export default ProfileScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1, padding: 20, justifyContent: 'center',
+  },
+  label: {
+    fontSize: 16, fontWeight: 'bold', marginTop: 10,
+  },
+  input: {
+    borderWidth: 1, borderColor: '#ccc', padding: 10, borderRadius: 5,
+  },
+});

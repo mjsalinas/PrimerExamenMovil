@@ -1,20 +1,34 @@
-import React, { useState } from "react";
-import { View, Text, Switch } from "react-native";
+import React, { useState } from 'react';
+import { View, Text, Switch, StyleSheet } from 'react-native';
 
-const SettingsScreen = () => {
-  const [darkMode] = useState(false); 
-  const [showAdvanced, setShowAdvanced] = useState(false);
+export default function SettingsScreen() {
+  const [modoOscuro, setModoOscuro] = useState(false);
 
   return (
-    <View style={{ padding: 20 }}>
-      <Text>Modo Oscuro</Text>
-      <Switch value={darkMode} onValueChange={() => {}} />
+    <View style={styles.container}>
+      <Text style={styles.label}>Modo oscuro</Text>
+      <Switch value={modoOscuro} onValueChange={setModoOscuro} />
 
-      <Text onPress={() => setShowAdvanced(!showAdvanced)}>Mostrar Avanzado</Text>
-
-      {showAdvanced ? <Text>Configuraciones Avanzadas</Text> : null}
+      {modoOscuro && (
+        <View style={styles.advanced}>
+          <Text style={styles.advancedText}>Configuraciones Avanzadas activadas</Text>
+        </View>
+      )}
     </View>
   );
-};
+}
 
-export default SettingsScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1, padding: 20, justifyContent: 'center',
+  },
+  label: {
+    fontSize: 18, marginBottom: 10,
+  },
+  advanced: {
+    marginTop: 20, padding: 15, backgroundColor: '#eee', borderRadius: 10,
+  },
+  advancedText: {
+    fontSize: 16,
+  },
+});

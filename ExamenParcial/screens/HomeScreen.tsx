@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 
 const HomeScreen = ({ navigation }: any) => {
-  const showWelcome = false;
+  const showWelcome = true;
 
   return (
     <View style={{ padding: 20 }}>
@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation }: any) => {
       <Button
         title="Ir a Perfil"
         onPress={() => {
-          navigation.navigate("Perfil");
+          navigation.navigate("Profile");
         }}
       />
     </View>
