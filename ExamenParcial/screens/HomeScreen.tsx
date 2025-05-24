@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 
-const HomeScreen = ({ navigation }: any) => {
-  const showWelcome = false;
+export default function HomeScreen({ navigation }: any) {
+  //const [showWelcome, setshowWelcome] = useState(false);
+
+  const showWelcome = true;
 
   return (
     <View style={{ padding: 20 }}>
@@ -11,11 +13,18 @@ const HomeScreen = ({ navigation }: any) => {
       <Button
         title="Ir a Perfil"
         onPress={() => {
-          navigation.navigate("Perfil");
+          navigation.navigate("Profile");
         }}
       />
+  <View style={{ padding: 10 }}>
+        <Button
+          title="Ir a Settings"
+          onPress={() => {
+            navigation.navigate("Settings");
+          }}
+        />
+        </View>
     </View>
   );
-};
+}
 
-export default HomeScreen;
