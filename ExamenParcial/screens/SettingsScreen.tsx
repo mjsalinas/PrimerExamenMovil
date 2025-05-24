@@ -10,7 +10,7 @@ const SettingsScreen = () => {
     <View style={{ padding: 20 }}>
       <Text>Modo Oscuro</Text>
       <Switch value={darkMode} onValueChange={() => {setDarkmode(!darkMode)}} />
-<Button title="Mostrar Avanzado" onPress={() => {setShowAdvanced(!showAdvanced)}} />
+<CustomButton title="Mostrar Avanzado" onPress={() => {setShowAdvanced(!showAdvanced)}} />
         
 
 {showAdvanced ? <Text>Configuraciones Avanzadas</Text> : null}

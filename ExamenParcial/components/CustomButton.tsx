@@ -9,9 +9,9 @@ type Props = {
 };
 
 
-const CustomButton = ({ title }:Props) => {
+const CustomButton = ({ title,onPress }:Props) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity onPress={onPress}  style={styles.button}>
       <Text style={{ color: "white" }}>{title}</Text>
     </TouchableOpacity>
   );
@@ -22,11 +22,11 @@ export default CustomButton;
 
 const styles =  StyleSheet.create({
         button: {
-            padding: 12, 
+            padding: 15, 
             margin: 10,
             borderRadius: 6,
-            backgroundColor: '#1c1c30',
-            borderWidth: 10,
+            backgroundColor: '#208008',
+            borderWidth: 2,
             borderColor: '#ccc'
         },
         text:{
