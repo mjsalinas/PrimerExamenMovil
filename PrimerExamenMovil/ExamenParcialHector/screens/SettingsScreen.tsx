@@ -32,12 +32,12 @@ const SettingsScreen: React.FC = () => {
         ]}
         onPress={() => setShowAdvanced(!showAdvanced)}
       >
-        {showAdvanced ? "Ocultar Avanzado" : "Mostrar Avanzado"}
+        {showAdvanced ? "Ocultar Opciones" : "Mostrar Opciones"}
       </Text>
 
       {showAdvanced && (
         <Text style={[styles.advancedText, { color: isDarkMode ? "#ddd" : "#555" }]}>
-          Configuraciones Avanzadas
+          Configuracion Predeterminada
         </Text>
       )}
     </View>
