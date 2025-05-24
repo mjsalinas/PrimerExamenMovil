@@ -1,21 +1,21 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
+import CustomButton from "../components/CustomButton";
 
-const HomeScreen = ({ navigation }: any) => {
+
+export default function HomeScreen ({ navigation }: any) => {
   const showWelcome = false;
 
   return (
     <View style={{ padding: 20 }}>
       {showWelcome && <Text>Bienvenido a la App</Text>}
 
-      <Button
+      <CustomButtonButton
         title="Ir a Perfil"
         onPress={() => {
-          navigation.navigate("Perfil");
+        navigation.navigate("Perfil");
         }}
       />
     </View>
   );
 };
-
-export default HomeScreen;

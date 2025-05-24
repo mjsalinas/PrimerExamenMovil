@@ -1,5 +1,10 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
+
+type Props={
+  title: string;
+  onPress: () => void;
+};
 
 const CustomButton = ({ label }) => {
   return (
@@ -10,3 +15,5 @@ const CustomButton = ({ label }) => {
 };
 
 export default CustomButton;
+ //Hola
+ 
