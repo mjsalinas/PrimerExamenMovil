@@ -1,14 +1,15 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import CustomButton from "../components/CustomButton";
 
 const HomeScreen = ({ navigation }: any) => {
-  const showWelcome = false;
+  const showWelcome = true;
 
   return (
-    <View style={{ padding: 20 }}>
+    <View style={styles.container}>
       {showWelcome && <Text>Bienvenido a la App</Text>}
 
-      <Button
+      <CustomButton
         title="Ir a Perfil"
         onPress={() => {
           navigation.navigate("Perfil");
@@ -17,5 +18,13 @@ const HomeScreen = ({ navigation }: any) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
 
 export default HomeScreen;
