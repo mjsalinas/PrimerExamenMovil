@@ -21,7 +21,7 @@ const SettingsScreen: React.FC = () => {
           value={isDarkMode}
           onValueChange={toggleDarkMode}
           thumbColor={isDarkMode ? "#007acc" : "#ccc"}
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
+          trackColor={{ false: "#767578", true: "#81b0ff" }}
         />
       </View>
 
