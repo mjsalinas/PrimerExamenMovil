@@ -2,15 +2,17 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 type Props={
-  label: string;
+  titulo: string;
   onPress: () => void;
 };
 
-const CustomButton: React.FC<Props> = ({ label, onPress }) => {
+export default function CustomButton({ titulo, onPress }: Props) {
 
   return (
-    <TouchableOpacity style={{ backgroundColor: "blue", padding: 10 }}>
-      <Text style={{ color: "white" }}>{label}</Text>
+    <TouchableOpacity 
+      style={styles.button}
+        onPress={onPress}>
+      <Text style={styles.text}>{titulo}</Text>
     </TouchableOpacity>
   );
 };
@@ -28,6 +30,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default CustomButton;
  
  

@@ -7,7 +7,7 @@ import SettingsScreen from "./screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator();
 
-export const RootNavigator = () => {
+export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -17,4 +17,5 @@ export const RootNavigator = () => {
     </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}
+// Se guardo

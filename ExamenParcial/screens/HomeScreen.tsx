@@ -8,10 +8,10 @@ export default function HomeScreen ({ navigation }:{navigation: any}) {
 
   return (
     <View style={styles.container}>
-      {showWelcome && <Text style={styles.welcomeText}>Bienvenido a la App</Text>}
+      {showWelcome && <Text> Bienvenido a la App </Text>}
 
       <CustomButton
-        label="Ir a Perfil"
+        titulo="Ir a Perfil"
         onPress={() => {
         navigation.navigate("Perfil");}}
       />
@@ -24,10 +24,6 @@ const styles = StyleSheet.create({
     padding: 20,
     flex: 1,
     justifyContent: "center",
-  },
-  welcomeText: {
-    fontSize: 18,
-    marginBottom: 20,
   },
 });
 

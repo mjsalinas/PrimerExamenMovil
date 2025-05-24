@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { View, TextInput, Button, Text, StyleSheet } from "react-native";
 
 const ProfileScreen = () => {
-  const [nombre, setNombre] = useState<string>("");
-  const [edad, setEdad] = useState <string>("");
-  const [bio, setBio] = useState<string>(""); 
+  const [nombre, setNombre] = useState("");
+  const [edad, setEdad] = useState("");
+  const [bio, setBio] = useState(""); 
   const [saved, setSaved] = useState(false);
 
   const guardarPerfil = () => {
