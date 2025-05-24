@@ -14,11 +14,11 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     <View
       style={[
         styles.container,
-        { backgroundColor: isDarkMode ? "#333" : "#f9f9f9" },
+        { backgroundColor: isDarkMode ? "#333" : "#02c2ff" },
       ]}
     >
       <Text style={[styles.welcomeText, { color: isDarkMode ? "#fff" : "#333" }]}>
-        Bienvenido a la App
+        Bienvenido a la Base de Datos
       </Text>
 
       <CustomButton

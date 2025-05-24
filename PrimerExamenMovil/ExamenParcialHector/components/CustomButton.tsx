@@ -25,14 +25,14 @@ export default function CustomButton({title, onPress, variant = 'primary'}: Prop
 function getStyles(type: string) {
   return StyleSheet.create({
     button: {
-      backgroundColor: type === 'primary' ? '#007BFF' : '#6C757D',
+      backgroundColor: type === 'primary' ? '#fff702' : '#6C757D',
       padding: 10,
-      borderRadius: 5,
+      borderRadius: 8,
       alignItems: 'center',
     },
     text: {
-      color: '#FFFFFF',
-      fontSize: 16,
+      color: '#050505',
+      fontSize: 22,
     },
   });
 }

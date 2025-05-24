@@ -13,11 +13,10 @@ const ProfileScreen: React.FC = () => {
     if (nombre && edad && bio !== "") {
       setSaved(true);
     } else {
-      alert("Por favor, ingresa un nombre válido y una edad numérica.");
+      alert("Por favor, ingresa un nombre y una edad .");
     }
   };
 
-  // Sacada de Google para retirar el mensaje luego de presionar el boton "Guardar"
   const handleInputChange = (setter: React.Dispatch<React.SetStateAction<string>>, value: string) => {
     setter(value);
     setSaved(false);
@@ -52,7 +51,7 @@ const ProfileScreen: React.FC = () => {
       />
 
       <TextInput
-        placeholder="Biografía"
+        placeholder="Descripcion"
         value={bio}
         onChangeText={(value) => handleInputChange(setBio, value)}
         style={[
@@ -62,7 +61,7 @@ const ProfileScreen: React.FC = () => {
       />
 
         <TouchableOpacity style={styles.button} onPress={guardarPerfil}>
-        <Text style={styles.buttonText}>Guardar</Text>
+        <Text style={styles.buttonText}>Guardar Ahora</Text>
       </TouchableOpacity>
 
       {saved && (
@@ -71,7 +70,7 @@ const ProfileScreen: React.FC = () => {
           <Text style={styles.resultText}>
             Tu nombre es: {nombre}, tienes {edad} años.
           </Text>
-          {bio ? <Text style={styles.resultText}>Biografía: {bio}</Text> : null}
+          {bio ? <Text style={styles.resultText}>Descripcion: {bio}</Text> : null}
         </View>
       )}
     </View>
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 16,
+    fontSize: 18,
   },
   savedContainer: {
     marginTop: 20,
