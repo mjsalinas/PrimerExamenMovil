@@ -26,7 +26,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         onPress={() => navigation.navigate("Profile")}
       />
 
-      <CustomButton
+<CustomButton
         title="Ir a Configuración"
         onPress={() => navigation.navigate("Settings")}
       />
