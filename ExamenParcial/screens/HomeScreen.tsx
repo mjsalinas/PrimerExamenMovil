@@ -1,19 +1,34 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import CustomButton from "../components/CustomButton";
+import { useTheme } from "../context/ThemeContext";
 
-const HomeScreen = ({ navigation }: any) => {
-  const showWelcome = true;
+interface HomeScreenProps {
+  navigation: any;
+}
+
+const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
+  const { isDarkMode } = useTheme();
 
   return (
-    <View style={styles.container}>
-      {showWelcome && <Text>Bienvenido a la App</Text>}
+    <View
+      style={[
+        styles.container,
+        { backgroundColor: isDarkMode ? "#333" : "#f9f9f9" },
+      ]}
+    >
+      <Text style={[styles.welcomeText, { color: isDarkMode ? "#fff" : "#333" }]}>
+        Bienvenido a la App
+      </Text>
 
       <CustomButton
         title="Ir a Perfil"
-        onPress={() => {
-          navigation.navigate("Perfil");
-        }}
+        onPress={() => navigation.navigate("Profile")}
+      />
+
+      <CustomButton
+        title="Ir a Configuración"
+        onPress={() => navigation.navigate("Settings")}
       />
     </View>
   );
@@ -24,6 +39,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    padding: 20,
+  },
+  welcomeText: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 30,
   },
 });
 
