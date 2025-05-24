@@ -8,8 +8,15 @@ const ProfileScreen = () => {
   const [bio, setBio] = useState("");
   const [saved, setSaved] = useState(false);
 
+  // Guardar los datos ingresados
+  const [perfilGuardado, setPerfilGuardado] = useState<{ nombre: string; edad: string; bio: string } | null>(null);
+
   const guardarPerfil = () => {
     if (nombre && edad && bio) {
+      setPerfilGuardado({ nombre, edad, bio });
+      setNombre("");
+      setEdad("");
+      setBio("");
       setSaved(true);
     }
   };
@@ -39,11 +46,11 @@ const ProfileScreen = () => {
 
       <Button title="Guardar" onPress={guardarPerfil} />
 
-      {saved && (
+      {saved && perfilGuardado && (
         <View style={{ marginTop: 20 }}>
           <Text>¡Guardado!</Text>
-          <Text>Tu nombre es: {nombre}, tienes {edad} años</Text>
-          <Text>Biografía: {bio}</Text>
+          <Text>Tu nombre es: {perfilGuardado.nombre}, tienes {perfilGuardado.edad} años</Text>
+          <Text>Biografía: {perfilGuardado.bio}</Text>
         </View>
       )}
     </View>
