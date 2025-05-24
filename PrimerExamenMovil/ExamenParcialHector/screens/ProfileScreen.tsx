@@ -26,7 +26,7 @@ const ProfileScreen: React.FC = () => {
     <View
       style={[
         styles.container,
-        { backgroundColor: isDarkMode ? "#333" : "#f9f9f9" },
+        { backgroundColor: isDarkMode ? "#333" : "#02c2ff" },
       ]}
     >
       <TextInput
@@ -51,7 +51,7 @@ const ProfileScreen: React.FC = () => {
       />
 
       <TextInput
-        placeholder="Descripcion"
+        placeholder="Biografia"
         value={bio}
         onChangeText={(value) => handleInputChange(setBio, value)}
         style={[
@@ -70,7 +70,7 @@ const ProfileScreen: React.FC = () => {
           <Text style={styles.resultText}>
             Tu nombre es: {nombre}, tienes {edad} años.
           </Text>
-          {bio ? <Text style={styles.resultText}>Descripcion: {bio}</Text> : null}
+          {bio ? <Text style={styles.resultText}>Biografia: {bio}</Text> : null}
         </View>
       )}
     </View>

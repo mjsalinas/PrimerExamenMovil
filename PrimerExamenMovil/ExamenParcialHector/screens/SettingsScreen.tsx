@@ -10,7 +10,7 @@ const SettingsScreen: React.FC = () => {
     <View
       style={[
         styles.container,
-        { backgroundColor: isDarkMode ? "#333" : "#f9f9f9" },
+        { backgroundColor: isDarkMode ? "#333" : "#3dfec1" },
       ]}
     >
       <View style={styles.settingRow}>
