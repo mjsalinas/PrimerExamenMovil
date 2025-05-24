@@ -21,7 +21,7 @@ export default function CustomButton({title, onPress, variant = 'primary'}: Prop
   );
 }
 
-// Define styles for the button
+// Estilo
 function getStyles(type: string) {
   return StyleSheet.create({
     button: {
