@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import CustomButton from "../components/CustomButton";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme} from "../context/ThemeContext";
 
 interface HomeScreenProps {
   navigation: any;
