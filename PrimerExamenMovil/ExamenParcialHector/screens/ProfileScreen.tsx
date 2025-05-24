@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, TextInput, TouchableOpacity, Text, StyleSheet } from "react-native";
-import { useTheme } from "../context/ThemeContext";
+import { useTheme} from "../context/ThemeContext";
 
 const ProfileScreen: React.FC = () => {
   const { isDarkMode } = useTheme(); 
@@ -17,6 +17,7 @@ const ProfileScreen: React.FC = () => {
     }
   };
 
+  // Sacada de Google para retirar el mensaje luego de presionar el boton "Guardar"
   const handleInputChange = (setter: React.Dispatch<React.SetStateAction<string>>, value: string) => {
     setter(value);
     setSaved(false);
@@ -60,7 +61,7 @@ const ProfileScreen: React.FC = () => {
         ]}
       />
 
-      <TouchableOpacity style={styles.button} onPress={guardarPerfil}>
+        <TouchableOpacity style={styles.button} onPress={guardarPerfil}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
 
