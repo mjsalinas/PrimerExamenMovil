@@ -1,12 +1,22 @@
 import React from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, GestureResponderEvent, StyleProp, ViewStyle } from "react-native";
 
-const CustomButton = ({ label }) => {
+type Props = {
+  label: string;
+  onPress?: (event: GestureResponderEvent) => void;
+  style?: StyleProp<ViewStyle>;
+};
+
+const CustomButton: React.FC<Props> = ({ label, onPress, style }) => {
   return (
-    <TouchableOpacity style={{ backgroundColor: "blue", padding: 10 }}>
-      <Text style={{ color: "white" }}>{label}</Text>
+    <TouchableOpacity
+      style={[{ backgroundColor: "pink", padding: 10, borderRadius: 5 }, style]}
+      onPress={onPress}
+    >
+      <Text style={{ color: "white", textAlign: "center" }}>{label}</Text>
     </TouchableOpacity>
   );
 };
 
 export default CustomButton;
+
