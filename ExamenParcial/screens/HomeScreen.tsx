@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation }: any) => {
       <Button
         title="Ir a Perfil"
         onPress={() => {
-          navigation.navigate("Perfil");
+          navigation.navigate("Profile");
         }}
       />
     </View>
