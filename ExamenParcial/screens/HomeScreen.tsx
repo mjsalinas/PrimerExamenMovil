@@ -15,13 +15,14 @@ const HomeScreen = ({ navigation }: any) => {
         }}
       />
 
+    <View style={{ marginTop: 10 }}>
       <Button
         title="Ir a Configuración"
         onPress={() => {
           navigation.navigate("Settings");  // Navega a la pantalla Configuración
         }}
-        Style={{ marginTop: 10 }}
       />
+    </View> 
     </View>
   );
 };
