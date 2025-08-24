@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }: any) => {
         onPress={() => {
           navigation.navigate("Settings");  // Navega a la pantalla Configuración
         }}
-        style={{ marginTop: 10 }}
+        Style={{ marginTop: 10 }}
       />
     </View>
   );
